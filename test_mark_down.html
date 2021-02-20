@@ -281,11 +281,7 @@ h6 {
 }
 </style>
 
-<style type="text/css">h1 {
-font-family: helveticaregular;
-font-size: 40px;
-color: green;
-}
+<style type="text/css">
 h2 {
 font-family: helveticalight;
 font-size: 16px;
@@ -293,6 +289,11 @@ color: grey;
 }
 .hljs {
 font-family: helveticalight;
+}
+h1.title {
+font-size: 55px;
+font-family: helveticaregular;
+color: green;
 }
 </style>
 
@@ -412,9 +413,11 @@ summary {
 
 <div id="r-markdown" class="section level2">
 <h2>R Markdown</h2>
-<p>Convert ttc to ttf <a href="https://transfonter.org/ttc-unpack" class="uri">https://transfonter.org/ttc-unpack</a><br />
+<p>{.test-p-class} Does not work. Trying to style text<br />
+Convert ttc to ttf <a href="https://transfonter.org/ttc-unpack" class="uri">https://transfonter.org/ttc-unpack</a><br />
 Convert ttf to base64 encode <a href="https://www.fontsquirrel.com/tools/webfont-generator" class="uri">https://www.fontsquirrel.com/tools/webfont-generator</a><br />
 Go to expert section and choose CSS / Base64 Encode.</p>
+<!-- Cant see anywhere that "cars" gets included -->
 <pre class="r"><code>summary(cars)</code></pre>
 <pre><code>##      speed           dist       
 ##  Min.   : 4.0   Min.   :  2.00  
@@ -423,9 +426,15 @@ Go to expert section and choose CSS / Base64 Encode.</p>
 ##  Mean   :15.4   Mean   : 42.98  
 ##  3rd Qu.:19.0   3rd Qu.: 56.00  
 ##  Max.   :25.0   Max.   :120.00</code></pre>
+<!-- The following wraps "Including Plots within a 
+div  with the following markup:  
+<div id="id-here" class="section level2 head-two-class">
+-->
 </div>
-<div id="including-plots" class="section level2">
+<div id="id-here" class="section level2 head-two-class">
 <h2>Including Plots</h2>
+<!-- Cannot find the class.source ..etc anywhere in html markup.
+-->
 <?xml version='1.0' encoding='UTF-8' ?>
 <svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' viewBox='0 0 432.00 288.00'>
 <defs>

@@ -25,22 +25,31 @@ library(htmltools)
 
 
 ## R Markdown
+{.test-p-class}  Does not work. Trying to style text  
 Convert ttc to ttf https://transfonter.org/ttc-unpack  
 Convert ttf to base64 encode https://www.fontsquirrel.com/tools/webfont-generator  
 Go to expert section and choose CSS / Base64 Encode.
+
+<!-- Cant see anywhere that "cars" gets included -->
 
 ```{r cars}
 summary(cars)
 ```
 
+<!-- The following wraps "Including Plots within a 
+div  with the following markup:  
+<div id="id-here" class="section level2 head-two-class">
+--> 
+
+## Including Plots {#id-here .head-two-class}
 
 
-## Including Plots
+<!-- Cannot find the class.source ..etc anywhere in html markup.
+--> 
 
-
-```{r pressure, echo=FALSE, warning = FALSE}
+```{r pressure, echo=FALSE, warning = FALSE, class.source = "cls-source", class.output = "cls-output"}
 plt_test <- readRDS("graph_example.rds")
-plt_test <- plt_test +  theme_minimal(base_family = "helveticalight")
+plt_test <- plt_test + theme_minimal(base_family = "helveticalight")
 suppressMessages(
 svglite::htmlSVG(plot(plt_test))
 )
