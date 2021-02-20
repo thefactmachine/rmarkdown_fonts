@@ -1,0 +1,49 @@
+---
+title: "Font test"
+author: "Mark"
+date: "20/02/2021"
+output:
+  html_document:
+    fig_width: 6 
+    fig_height: 4 
+    dev:  'svg'
+    css:  "mark_style.css"
+    includes:
+      in_header: header.html
+---
+
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(svglite)
+library(htmltools)
+
+# set output device to svg
+# knitr::opts_chunk$set(dev = 'svg') 
+```
+
+
+
+## R Markdown
+Convert ttc to ttf https://transfonter.org/ttc-unpack  
+Convert ttf to base64 encode https://www.fontsquirrel.com/tools/webfont-generator  
+Go to expert section and choose CSS / Base64 Encode.
+
+```{r cars}
+summary(cars)
+```
+
+
+
+## Including Plots
+
+
+```{r pressure, echo=FALSE, warning = FALSE}
+plt_test <- readRDS("graph_example.rds")
+plt_test <- plt_test +  theme_minimal(base_family = "helveticalight")
+suppressMessages(
+svglite::htmlSVG(plot(plt_test))
+)
+```
+
+
